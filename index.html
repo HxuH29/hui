@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="Zh-CN">
 
@@ -9,6 +10,7 @@
         * {
             margin: 0;
         }
+
         h1 {
             text-align: center;
             background-color: rgb(255, 0, 119);
@@ -16,175 +18,156 @@
             line-height: 100px;
         }
 
-        main {/*父元素样式*/
-            text-align: center;/*内容居中*/
-        }
-    </style>
-</head>
-
-<body>
-    <main><!-- 父元素 -->
-        <!DOCTYPE html>
-<html lang="Zh-CN">
-
-<head>
-    <meta charset="utf-8">
-    <title>辉的第一个网站</title>
-    <link rel="stylesheet" href="template">
-    <style>
-        * {
-            margin: 0;
-        }
-        h1 {
+        main {
+            /*父元素样式*/
             text-align: center;
-            background-color: rgb(255, 0, 119);
-            color: antiquewhite;
-            line-height: 100px;
+            /*内容居中*/
         }
 
-        main {/*父元素样式*/
-            text-align: center;/*内容居中*/
+        .bg-img {
+            position: relative;
+        }
+
+        #时钟边框 {
+            position: absolute;
+            right: 0px;
+            top: 20px;
         }
     </style>
 </head>
 
 <body>
-    <div class="bg-img"></div>
-        <i><h1>阿辉<p></i>
-        <img   src="http://cdn.u1.huluxia.com/g4/M01/5F/3C/rBAAdmLfwUCATf5gAABfXyRqCDA620.jpg"alt="头像" style="width: 150px;height: 150px;border-radius: 30%;padding: 30px;"></p> </h1>
-    <main><!-- 父元素 -->
+    <div class="bg-img">
+        <i>
+            <h1>阿辉<h1>
+        </i>
+        <p><img src="http://cdn.u1.huluxia.com/g4/M01/5F/3C/rBAAdmLfwUCATf5gAABfXyRqCDA620.jpg" alt="头像"
+                style="width: 150px;height: 150px;border-radius: 30%;padding: 30px;"></p>
+        </h1>
+        <div id="时钟边框">
+            <style id="style">
+                #时钟边框 {
+                    height: 300px;
+                    width: 200px;
+                    background: linear-gradient(45deg, #cdb, #4ac);
+                    border: 5px double #555;
+                    /* 下面所有时钟的元素都会相对于这个定位 */
+                }
+
+                ul {
+                    list-style: none;
+                }
+
+                #circle {
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 100px;
+                    border: 1px solid black;
+                }
+
+                #kedu li {
+                    width: 1px;
+                    height: 6px;
+                    border-radius: 10px;
+                    background-color: black;
+                    transform-origin: center 101px;
+                    /*设置li标签的旋转中心和旋转半径。*/
+                    position: absolute;
+                    left: 100px;
+                    top: 0px;
+                }
+
+                #kedu li:nth-of-type(5n+1) {
+                    height: 12px;
+                    width: 2px;
+                }
+
+                /* 秒针的绘制，用transform把div绘制成线条，后面的指针都是在这样。 */
+                #second {
+                    width: 2px;
+                    height: 80px;
+                    background-color: red;
+                    transform: scaleY(1);
+                    position: absolute;
+                    left: 100px;
+                    top: 22px;
+                    transform-origin: bottom;
+                    /*设置它们的旋转中心，transform-origin: bottom；意思是以它们的底部为中心旋转。*/
+                }
+
+                #min {
+                    width: 2px;
+                    height: 65px;
+                    background-color: gray;
+                    transform: scaleY(1);
+                    position: absolute;
+                    left: 100px;
+                    top: 37px;
+                    transform-origin: bottom;
+                }
+
+                #hour {
+                    width: 2px;
+                    height: 50px;
+                    background-color: black;
+                    transform: scaleY(1);
+                    position: absolute;
+                    left: 100px;
+                    top: 52px;
+                    transform-origin: bottom;
+                }
+
+                #p12 {
+                    position: absolute;
+                    left: 92px;
+                    top: -5px;
+                }
+
+                #p3 {
+                    position: absolute;
+                    left: 176px;
+                    top: 73px;
+                }
+
+                #p6 {
+                    position: absolute;
+                    left: 96px;
+                    top: 153px;
+                }
+
+                #p9 {
+                    position: absolute;
+                    left: 16px;
+                    top: 73px;
+                }
+            </style>
+            <div id="circle">
+                <ul id="kedu"></ul>
+            </div>
+            <div id="second"></div>
+            <!--绘制秒针-->
+            <div id="min"></div>
+            <!--绘制分针-->
+            <div id="hour"></div>
+            <!--绘制时针-->
+            <p id="p12">12</p>
+            <p id="p3">3</p>
+            <p id="p6">6</p>
+            <p id="p9">9</p>
+            <div id="sj">
+                <span>21:52</span>&nbsp;<span>53</span><br>
+                <span>2022-5-1 星期日</span>
+            </div>
+        </div>
+    </div>
+    <main>
+        <!-- 父元素 -->
         <h2>
-        <p>欢迎你来到<b>阿辉</b>的网页</p>
-        <p>这是<b>阿辉</b>的网页
-        <p>你好 我是<b>阿辉</b></p>
-       
-</script>
-</div>
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <div id="时钟边框">
-        <style id="style">
-            #时钟边框 {
-                height: 300px;
-                width: 200px;
-                background: linear-gradient(45deg, #cdb, #4ac);
-                border: 5px double #555;
-                position: relative;
-                /* 下面所有时钟的元素都会相对于这个定位 */
-            }
-
-            ul {
-                list-style: none;
-            }
-
-            #circle {
-                width: 200px;
-                height: 200px;
-                border-radius: 100px;
-                border: 1px solid black;
-            }
-
-            #kedu li {
-                width: 1px;
-                height: 6px;
-                border-radius: 10px;
-                background-color: black;
-                transform-origin: center 101px;
-                /*设置li标签的旋转中心和旋转半径。*/
-                position: absolute;
-                left: 100px;
-                top: 0px;
-            }
-
-            #kedu li:nth-of-type(5n+1) {
-                height: 12px;
-                width: 2px;
-            }
-
-            /* 秒针的绘制，用transform把div绘制成线条，后面的指针都是在这样。 */
-            #second {
-                width: 2px;
-                height: 80px;
-                background-color: red;
-                transform: scaleY(1);
-                position: absolute;
-                left: 100px;
-                top: 22px;
-                transform-origin: bottom;
-                /*设置它们的旋转中心，transform-origin: bottom；意思是以它们的底部为中心旋转。*/
-            }
-
-            #min {
-                width: 2px;
-                height: 65px;
-                background-color: gray;
-                transform: scaleY(1);
-                position: absolute;
-                left: 100px;
-                top: 37px;
-                transform-origin: bottom;
-            }
-
-            #hour {
-                width: 2px;
-                height: 50px;
-                background-color: black;
-                transform: scaleY(1);
-                position: absolute;
-                left: 100px;
-                top: 52px;
-                transform-origin: bottom;
-            }
-
-            #p12 {
-                position: absolute;
-                left: 92px;
-                top: -5px;
-            }
-
-            #p3 {
-                position: absolute;
-                left: 176px;
-                top: 73px;
-            }
-
-            #p6 {
-                position: absolute;
-                left: 96px;
-                top: 153px;
-            }
-
-            #p9 {
-                position: absolute;
-                left: 16px;
-                top: 73px;
-            }
-        </style>
-        <div id="circle">
-            <ul id="kedu"></ul>
-        </div>
-        <div id="second"></div>
-        <!--绘制秒针-->
-        <div id="min"></div>
-        <!--绘制分针-->
-        <div id="hour"></div>
-        <!--绘制时针-->
-        <p id="p12">12</p>
-        <p id="p3">3</p>
-        <p id="p6">6</p>
-        <p id="p9">9</p>
-        <script src="./JS/SZhong.js"></script>
-        <div id="sj">
-            <span>21:52</span>&nbsp;<span>53</span><br>
-            <span>2022-5-1 星期日</span>
-        </div>
+            <p>欢迎你来到<b>阿辉</b>的网页</p>
+            <p>这是<b>阿辉</b>的网页</p>
+            <p>你好 我是<b>阿辉</b></p>
+        </h2>
+    </main>
     </div>
 </body>
 
@@ -220,8 +203,4 @@
     setInterval(time, 100)//用计时器每100ms运行这个time函数。
 </script>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keyword" content="Q爱记">
 </html>
