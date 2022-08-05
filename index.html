@@ -1,95 +1,704 @@
-<html lang="en" >
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ZMR - 摸鱼大师</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyword" content="Q爱记">
+    <meta name='description' content="在我们印象当中，不管是哪一门学科的老师，只要在谈到学习方法时，都会强调做笔记的重要性。所以我集合各种网站、语言等大多数的学习笔记">
+    <!-- 搜索引擎里网页标题下面的描述，它和title是最重要的SEO信息，要简洁有效，否则搜索引擎会降低网站的权重值 -->
+    <meta property="og:image" content="./images/logo.png">
+    <meta name="og:title" content="阿辉">
+    <title>阿辉-官网</title>
+	<meta name="msvalidate.01" content="833996391C5FAC80D4B1DADA8B30BD69" /><!-- 必应验证 -->
+    <link rel="manifest" href="./seochecker-manifest-101.json"><!-- manifest名单、清单，告诉浏览器安装应用的一些信息 -->
+    <link rel="icon" href="./images/favicon.ico"><!-- 网页标题位置的图标 -->
+    <!-- 引入字体图标-小飞机 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-<link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="./JS/function.js"></script>
+    <script type="text/javascript" src="./JS/jquery.js"></script>
+    <style>
+        .box-shadow {
+            box-shadow: 9px 9px 16px 0px rgb(163 177 198 / 60%),
+                -9px -9px 16px 0px rgb(255 255 255);
+        }
 
+        .text-shadow {
+            text-shadow: 1px 1px 0 #fff;
+        }
+
+        a {
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.2rem 1rem;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            /* 小手 */
+            border-radius: 1.5rem;
+            border: 1px solid rgb(220, 233, 254, 0.5);
+            box-shadow: 9px 9px 16px 0px rgb(163 177 198 / 40%),
+                -9px -9px 16px 0px rgb(255 255 255 / 80%);
+            text-shadow: 1px 1px 0 #FFF;
+            transition: all 0.4s ease-in-out;
+            color: #133c55 !important;
+        }
+
+        a:hover {
+            box-shadow: 5px 5px 10px 0px rgb(163 177 198 / 60%),
+                -5px -5px 10px 0px rgb(255 255 255) !important;
+            text-shadow: 1px 1px 10px #fff !important;
+        }
+
+        html,
+        body {
+            margin: 0;
+            min-width: 420px;
+        }
+
+        body {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            /* 主轴方向，垂直方向，起点在上 */
+            flex-wrap: wrap;
+            /* 如果一条线排列不下如何换行，第一行在上 */
+            background-color: #ECF3FF;
+            /* background-image: url(./images/background.webp);
+                background-repeat: no-repeat;
+                background-position: bottom right;
+                background-size: cover;
+                height: 100vh */
+            /* filter: blur(10px); 虚化*/
+        }
+
+        @media screen and (max-width: 600px) {
+            #header2 div {
+                display: none !important;
+            }
+
+            #时钟边框 {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 601px) {
+            #header3 {
+                display: none !important;
+            }
+        }
+
+        header {
+            width: 100%;
+            height: 70px;
+            color: #000;
+            font-weight: 900;
+            background-color: #ECF3FF;
+            border-bottom: 1px double #fbf;
+            line-height: 70px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            /* 两端对齐 */
+        }
+
+        header #logo {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* 主轴对齐方式 */
+            /* align-items: baseline;交叉轴对齐方式 */
+        }
+
+        header #logo img {
+            margin: 10px;
+            width: 80px;
+            height: 50px;
+            background-color: #777;
+            border-radius: 5px;
+        }
+
+        header #logo span {
+            font-size: 35px;
+            font-family: '华文彩云', '华文琥珀', '宋体';
+            overflow: hidden;
+        }
+
+        header #header2 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            /* justify-content: center; */
+            align-items: center;
+            flex-shrink: default 2;
+        }
+
+        header #header2 div {
+            margin: 5px;
+            overflow: hidden;
+            padding: 5px;
+        }
+
+        header #header2 div a {
+            text-decoration: none;
+            color: #000;
+            transition: all 0.3s;
+            margin: 0 20px;
+            padding: 0.6rem 1rem;
+            border-radius: 5rem;
+        }
+
+        header #header2 img {
+            margin: 20px;
+            border-radius: 30px;
+            background-color: aqua;
+            width: 60px;
+            height: 60px;
+            transition: all 0.5s;
+            box-shadow: 9px 9px 16px 0px rgb(163 177 198 / 60%),
+                -9px -9px 16px 0px rgb(255 255 255);
+        }
+
+        header #header2 img:hover {
+            box-shadow: 0 0 10px rgb(163 177 198 / 80%);
+        }
+
+        #header3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1;
+            border: 1px solid rgb(220, 233, 254, 0.5);
+        }
+
+        #header3 div a {
+            text-decoration: none;
+            padding: 0;
+            margin: 0;
+            box-shadow: none;
+            text-shadow: none;
+        }
+
+        #导航 {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            z-index: 1;
+        }
+
+        #zhongjian {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+        }
+
+        #zhongjian #中间内容 {
+            flex: 8;
+            margin: 0 20px;
+            border: 3px double #000;
+        }
+
+        #zhongjian #中间内容 iframe {
+            width: 100%;
+            height: 500px;
+            min-width: 230px;
+        }
+
+        #zhongjian #z-right {
+            flex: 1;
+            text-indent: 4vh;
+            width: 15%;
+            height: 300px;
+            min-width: 200px;
+            border: 3px double #000;
+        }
+
+        #xdj {
+            text-align: center;
+            color: black;
+            font-size: 20px;
+            height: 75px;
+        }
+
+        #sj {
+            color: white;
+            width: 140px;
+            margin: 10px auto;
+        }
+
+        #sj span:nth-child(1) {
+            font-size: 40px;
+        }
+
+        #sj span:nth-child(4) {
+            font-size: 14px;
+        }
+
+        #底部 {
+            width: 100%;
+            position: fixed;
+            bottom: 50px;
+        }
+
+        #底部 svg {
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
+            font-weight: 300;
+            font-family: Roboto, sans-serif;
+            text-shadow: 1px 1px 0 #FFF;
+            fill: rgb(19, 60, 85);
+            box-sizing: border-box;
+            overflow: hidden;
+            vertical-align: middle;
+            animation: shake-horizontal 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0.5s infinite both;
+            width: 120%;
+            height: 50px;
+            background: #ecf3ff;
+            margin-left: -10%;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: #133C55;
+            position: fixed;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        footer a {
+            color: #bbb !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            font-size: 14px !important;
+            font-weight: normal;
+            margin-left: 10px !important;
+            margin-right: 10px !important;
+            border: none !important;
+        }
+
+        footer a:hover {
+            color: #bbb;
+            font-size: 14px !important;
+            font-weight: normal;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            margin-left: 10px !important;
+            margin-right: 10px !important;
+            border: none !important;
+        }
+
+        footer span {
+            color: #bbb !important;
+            font-size: 14px !important;
+            border: none !important;
+        }
+
+        /* 小灰机 */
+        @keyframes bianse {
+            0% {
+                color: red;
+            }
+
+            20% {
+                color: violet;
+            }
+
+            40% {
+                color: #000;
+            }
+
+            50% {
+                color: green;
+            }
+
+            60% {
+                color: #fff;
+            }
+
+            70% {
+                color: blue;
+            }
+
+            90% {
+                color: coral;
+            }
+
+            100% {
+                color: red;
+            }
+        }
+
+        #plane {
+            color: #fff;
+            font-size: 70px;
+            /* 绝对定位 */
+            position: absolute;
+            z-index: -1;
+            animation: bianse 5s infinite;
+        }
+    </style>
 </head>
+
 <body>
-
-<div class="card" data-state="#about">
-  <div class="card-header">
-    <div class="card-cover" style="background-image: url('img/user.jpg')"></div>
-    <img class="card-avatar" src="img/user.jpg" alt="avatar" />
-    <h1 class="card-fullname">TIAYUN</h1>
-    <h2 class="card-jobtitle">企业级云服提供商</h2>
-  </div>
-  <div class="card-main">
-    <div class="card-section is-active" id="about">
-      <div class="card-content">
-        <div class="card-subtitle">关于</div>
-        <p class="card-desc">我是一名高级CV网站搭建及设计攻城狮子，如果你想了解关于我的更多信息，请点击下方按钮.
-        </p>
-      </div>
-      <div class="card-social">
-        <a href="#"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15.997 3.985h2.191V.169C17.81.117 16.51 0 14.996 0c-3.159 0-5.323 1.987-5.323 5.639V9H6.187v4.266h3.486V24h4.274V13.267h3.345l.531-4.266h-3.877V6.062c.001-1.233.333-2.077 2.051-2.077z" /></svg></a>
-        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path d="M512 97.248c-19.04 8.352-39.328 13.888-60.48 16.576 21.76-12.992 38.368-33.408 46.176-58.016-20.288 12.096-42.688 20.64-66.56 25.408C411.872 60.704 384.416 48 354.464 48c-58.112 0-104.896 47.168-104.896 104.992 0 8.32.704 16.32 2.432 23.936-87.264-4.256-164.48-46.08-216.352-109.792-9.056 15.712-14.368 33.696-14.368 53.056 0 36.352 18.72 68.576 46.624 87.232-16.864-.32-33.408-5.216-47.424-12.928v1.152c0 51.008 36.384 93.376 84.096 103.136-8.544 2.336-17.856 3.456-27.52 3.456-6.72 0-13.504-.384-19.872-1.792 13.6 41.568 52.192 72.128 98.08 73.12-35.712 27.936-81.056 44.768-130.144 44.768-8.608 0-16.864-.384-25.12-1.44C46.496 446.88 101.6 464 161.024 464c193.152 0 298.752-160 298.752-298.688 0-4.64-.16-9.12-.384-13.568 20.832-14.784 38.336-33.248 52.608-54.496z" /></svg></a>
-        <a href="#"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-            <path d="M301 256c0 24.852-20.148 45-45 45s-45-20.148-45-45 20.148-45 45-45 45 20.148 45 45zm0 0" />
-            <path d="M332 120H180c-33.086 0-60 26.914-60 60v152c0 33.086 26.914 60 60 60h152c33.086 0 60-26.914 60-60V180c0-33.086-26.914-60-60-60zm-76 211c-41.355 0-75-33.645-75-75s33.645-75 75-75 75 33.645 75 75-33.645 75-75 75zm86-146c-8.285 0-15-6.715-15-15s6.715-15 15-15 15 6.715 15 15-6.715 15-15 15zm0 0" />
-            <path d="M377 0H135C60.562 0 0 60.563 0 135v242c0 74.438 60.563 135 135 135h242c74.438 0 135-60.563 135-135V135C512 60.562 451.437 0 377 0zm45 332c0 49.625-40.375 90-90 90H180c-49.625 0-90-40.375-90-90V180c0-49.625 40.375-90 90-90h152c49.625 0 90 40.375 90 90zm0 0" /></svg></a>
-        <a href="#"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M23.994 24v-.001H24v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07V7.976H8.489v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243V24zM.396 7.977h4.976V24H.396zM2.882 0C1.291 0 0 1.291 0 2.882s1.291 2.909 2.882 2.909 2.882-1.318 2.882-2.909A2.884 2.884 0 002.882 0z" /></svg></a>
-      </div>
-    </div>
-    <div class="card-section" id="experience">
-      <div class="card-content">
-        <div class="card-subtitle">时间轴</div>
-        <div class="card-timeline">
-          <div class="card-item" data-year="2014">
-            <div class="card-item-title">QWQ <span>2021-10-28</span></div>
-            <div class="card-item-desc">123456789</div>
-          </div>
-          <div class="card-item" data-year="2016">
-            <div class="card-item-title">自定义 <span>2021-10-26</span></div>
-            <div class="card-item-desc">666666666666</div>
-          </div>
-          <div class="card-item" data-year="2018">
-            <div class="card-item-title">暂无 <span>-</span></div>
-            <div class="card-item-desc">-</div>
-          </div>
-          <div class="card-item" data-year="2020">
-            <div class="card-item-title">暂无 <span>-</span></div>
-            <div class="card-item-desc">-</div>
-          </div>
+    <!-- 头部：logo -->
+    <header>
+        <div id="logo">
+            <img src="http://cdn.u1.huluxia.com/g4/M03/6D/C3/rBAAdmLs1XKALbAKAABfXyRqCDA863.jpg" alt="">
+            <span class="text-shadow">阿辉</span>
         </div>
-      </div>
-    </div>
-    <div class="card-section" id="contact">
-      <div class="card-content">
-        <div class="card-subtitle">联系我</div>
-        <div class="card-contact-wrapper">
-          <div class="card-contact">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-              <circle cx="12" cy="10" r="3" /></svg>
-            中国-香港
-          </div>
-          <div class="card-contact">
-            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" /></svg>(+86) 我才不告诉你呢</div>
-          <div class="card-contact">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-              <path d="M22 6l-10 7L2 6" /></svg>
-            info@tsy.ink
-          </div>
-          <button class="contact-me">GOOD DAY</button>
+        <div id="header2">
+            <style>
+                form {
+                    width: 100%;
+                    display: flex;
+                    border: 2px solid #ddd;
+                    border-radius: 15px;
+                    height: 50px;
+                }
+                form img#ss {
+                    width: 55px;
+                    height: 50px;
+                    transform: scale(0.5);
+                    border: none !important;
+                    box-shadow: none !important;
+                    border-radius: 0 !important;
+                    background: none !important;
+                    margin: auto 0;
+                    padding: 0;
+                    text-shadow: none !important;
+                }
+
+                form input {
+                    width: 100%;
+                    border: none;
+                    background: none;
+                    margin: 0;
+                    padding: 0;
+                    text-align: left;
+                    outline: none;
+                }
+
+                form button {
+                    border: none;
+                    background: none;
+                    margin: 0;
+                    padding: 0;
+                    position: fixed;
+                }
+
+                form button img {
+                    width: 50px;
+                    height: 50px;
+                    transform: scale(0.5);
+                    position: absolute;
+                    top: -5px;
+                    right: -270px;
+                    /* input的size每增加5%,这里减少40px */
+                    border: none !important;
+                    box-shadow: none !important;
+                    border-radius: 0 !important;
+                    background: none !important;
+                    margin: auto 0 !important;
+                    padding: 0 !important;
+                    text-shadow: none !important;
+                }
+            </style>
+            <div id="ssk">
+                <form action="https://www.bing.com/search?q=">
+                    <!-- 打不开百度，所以用必应 iframe为了可以在新标签打开就不设置了 -->
+                    <img src="https://s.cn.bing.net/th?id=ODLS.87518fab-8fc1-4893-a7f1-c7d88283a35a&w=16&h=16&o=6&pid=1.2"
+                        alt="" id="ss">
+                    <input type="text" name="q" placeholder="必应搜索" size="25%" autofocus='autofocus'>
+                    <button value="搜索" title="搜索">
+                    </button>
+                </form>
+            </div>
+            <img src="http://cdn.u1.huluxia.com/g4/M02/6D/C4/rBAAdmLs1k2AFB5uAACLcg2nbI4564.jpg" alt="" class="box-shadow text-shadow">
         </div>
-      </div>
-    </div>
-    <div class="card-buttons">
-      <button data-section="#about" class="is-active">个人主页</button>
-      <button data-section="#experience">时间轴</button>
-      <button data-section="#contact">联系我们</button>
-    </div>
-  </div>
-</div>
+    </header>
+    <div id="header3">
+        <style>
+            #ssk1 form {
+                width: 100%;
+                display: flex;
+                border: 2px solid #ddd;
+                border-radius: 15px;
+                height: 50px;
+            }
 
-<script  src="js/script.js"></script>
+            #ssk1 form img#ss {
+                width: 55px;
+                height: 50px;
+                transform: scale(0.6);
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                background: none !important;
+                margin: auto 0;
+                padding: 0;
+                text-shadow: none !important;
+            }
 
-</body>
+            #ssk1 form input {
+                width: 300px;
+                border: none;
+                background: none;
+                margin: 0;
+                padding: 0;
+                text-align: left;
+                outline: none;
+            }
+
+            #ssk1 form button {
+                border: none;
+                background: none;
+                margin: 0;
+                padding: 0;
+                position: fixed;
+            }
+
+            #ssk1 form button img {
+                width: 50px;
+                height: 50px;
+                transform: scale(0.5);
+                position: absolute;
+                top: 0px;
+                right: -360px;
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                background: none !important;
+                margin: auto 0 !important;
+                padding: 0 !important;
+                text-shadow: none !important;
+            }
+        </style>
+        <div id="ssk1">
+            <form action="https://www.baidu.com/s" target="_blank">
+                <img src="./img/baidu_icon.png" alt="" id="ss">
+                <input type="text" name="word" placeholder="百度搜索">
+                <button value="搜索" title="搜索">
+                    <img src="./img/s1.png" alt="">
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 导航 -->
+    <div id="导航">
+        <div><a href="https://codingfantasy.com/">玩游戏学Flex</a></div>
+        <div><a href="https://www.runoob.com/">菜鸟教程</a></div>
+        <div><a href="https://meiriyiwen.com/random">每日一文</a></div>
+        <div><a href="https://www.yikm.net/">小霸王</a></div>
+        <div><a href="https://www.bilibili.com/">哔哩哔哩</a></div>
+        <div><a href="https://github.com/">GitHub</a></div>
+        <div><a href="https://www.csdn.net/">CSDN</a></div>
+        <div><a href="https://www.w3school.com.cn/">w3school</a></div>
+        <div><a href="https://www.kugou.com/">酷狗音乐</a></div>
+        <div><a
+                href="https://cowtransfer.com/?utm_campaign=22_tools&utm_medium=pc&utm_source=tools&gio_link_id=xo0Q1v09">牛奶快传</a>
+        </div>
+        <div><a href="https://tikolu.net/emojimix/">emoji合成</a></div>
+        <div><a href="https://www.iqiyi.com/">爱奇艺</a></div>
+        <div><a href="https://www.baidu.com">百度</a></div>
+    </div>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width:1000px;
+				height:460px;
+				position:relative;
+			}
+			.box-img{
+				position:absolute;
+				top:0;
+				left:0;
+				opacity:0;
+				transition:all 1.5s;
+			}
+			.box-img:nth-child(1){
+				opacity:1;
+			}
+			.box-left{
+				position:absolute;
+				width:35px;
+				height:70px;
+				color:#ccc;
+				top:195px;
+				border-radius:0 5px 5px 0;
+				text-align:center;
+				line-height:70px;
+				font-size:27px;
+			}
+			.box-left:hover{
+				background-color:#00000050;
+				color:#fff;
+			}
+			.box-right{
+				position:absolute;
+				width:35px;
+				height:70px;
+				color:#ccc;
+				top:195px;
+				border-radius:0 5px 5px 0;
+				text-align:center;
+				line-height:70px;
+				font-size:27px;
+				right:0;
+			}
+			.box-right:hover{
+				background-color:#00000050;
+				color:#fff;
+			}
+			.box-zhiding>ul{
+				padding:0;
+				margin:0;
+				list-style:none;
+			}
+			.box-zhiding li{
+				width:14px;
+				height:14px;
+				border-radius:100%;
+				background-color:#ccc;
+				float:left;
+				margin-right:10px;
+			}
+			.box-zhiding li:hover{
+				background-color:#fff;
+			}
+			.box-zhiding li:nth-child(1){
+				background-color:#fff;
+			}
+			.box-zhiding{
+				position:absolute;
+				bottom:30px;
+				right:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box-img"><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3gyAOkPxAAN21lweOTc454.jpg                " width="1000" height="460"></div>
+            <div class="box-img"><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3haAB8NoAAQmudz12qg631.jpg                " width="1000" height="460"></div>
+            <div class="box-img"><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3h2ASOxzAANkKL1NIh4216.jpg                " width="1000" height="460"></div>
+            <div class="box-img"><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3iSAbA-mAAPJIXda3Co376.jpg                " width="1000" height="460"></div>
+            <div class="box-img"><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D1/rBAAdmLs3wKAbYwLAAMro6sZfmM675.jpg                " width="1000" height="460"></div>
+            <div class="box-img"><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D1/rBAAdmLs3wmAP4-bAADG2X4gJXE397.jpg                " width="1000" height="460"></div>
+			<div class="box-left">&lt;</div>
+			<div class="box-right">&gt;</div>
+			<div class="box-zhiding">
+				<ul>
+					<li class="botton"></li>
+					<li class="botton"></li>
+					<li class="botton"></li>
+					<li class="botton"></li>
+					<li class="botton"></li>
+					<li class="botton"></li>
+				</ul>
+			</div>
+		</div>
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var index=0;//标记当前图片索引
+			var f;
+			dingshiqi();
+			function dingshiqi(){
+				f=setInterval(function(){
+					if(index==$(".box-img").length-1){
+						index=0;
+						$(".box-img").css("opacity","0");
+						$(".box-img").eq(index).css("opacity","1");
+						$(".botton").css("background-color","#ccc");
+						$(".botton").eq(index).css("background-color","#fff");
+					}else{
+						index++;
+						$(".box-img").css("opacity","0");
+						$(".box-img").eq(index).css("opacity","1");
+						$(".botton").css("background-color","#ccc");
+						$(".botton").eq(index).css("background-color","#fff");
+					}
+				},4000)
+			}
+			$(".box-left").click(function(){
+				clearInterval(f);
+				if(index==0){
+					index=$(".box-img").length-1;
+					$(".box-img").css("opacity","0");
+					$(".box-img").eq(index).css("opacity","1");
+					$(".botton").css("background-color","#ccc");
+					$(".botton").eq(index).css("background-color","#fff");
+					dingshiqi();
+				}
+				else{
+					index--;
+					$(".box-img").css("opacity","0");
+					$(".box-img").eq(index).css("opacity","1");
+					$(".botton").css("background-color","#ccc");
+					$(".botton").eq(index).css("background-color","#fff");
+					dingshiqi();
+				}
+			})
+			$(".box-right").click(function(){
+				clearInterval(f);
+				if(index==$(".box-img").length-1){
+					index=0;
+					$(".box-img").css("opacity","0");
+					$(".box-img").eq(index).css("opacity","1");
+					$(".botton").css("background-color","#ccc");
+					$(".botton").eq(index).css("background-color","#fff");
+					dingshiqi();
+				}
+				else{
+					index++;
+					$(".box-img").css("opacity","0");
+					$(".box-img").eq(index).css("opacity","1");
+					$(".botton").css("background-color","#ccc");
+					$(".botton").eq(index).css("background-color","#fff");
+					dingshiqi();
+				}
+			})
+			
+				$(".botton").click(function(){
+					clearInterval(f);
+					var indexx=$(this).index();
+					index=indexx;
+					$(".box-img").css("opacity","0");
+					$(".box-img").eq(index).css("opacity","1");
+					$(".botton").css("background-color","#ccc");
+					$(".botton").eq(index).css("background-color","#fff");
+					dingshiqi();
+				})
+			
+		})
+	</script>
+	</body>
+</html>
+
+
 </html>
