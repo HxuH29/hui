@@ -600,105 +600,324 @@
 				right:100px;
 			}
 		</style>
-	</head>
-	<body>
-		<div class="box">
-			<div class="box-img"><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3gyAOkPxAAN21lweOTc454.jpg                " width="1000" height="460"></div>
-            <div class="box-img"><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3haAB8NoAAQmudz12qg631.jpg                " width="1000" height="460"></div>
-            <div class="box-img"><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3h2ASOxzAANkKL1NIh4216.jpg                " width="1000" height="460"></div>
-            <div class="box-img"><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3iSAbA-mAAPJIXda3Co376.jpg                " width="1000" height="460"></div>
-            <div class="box-img"><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D1/rBAAdmLs3wKAbYwLAAMro6sZfmM675.jpg                " width="1000" height="460"></div>
-            <div class="box-img"><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D1/rBAAdmLs3wmAP4-bAADG2X4gJXE397.jpg                " width="1000" height="460"></div>
-			<div class="box-left">&lt;</div>
-			<div class="box-right">&gt;</div>
-			<div class="box-zhiding">
-				<ul>
-					<li class="botton"></li>
-					<li class="botton"></li>
-					<li class="botton"></li>
-					<li class="botton"></li>
-					<li class="botton"></li>
-					<li class="botton"></li>
-				</ul>
-			</div>
-		</div>
-	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			var index=0;//标记当前图片索引
-			var f;
-			dingshiqi();
-			function dingshiqi(){
-				f=setInterval(function(){
-					if(index==$(".box-img").length-1){
-						index=0;
-						$(".box-img").css("opacity","0");
-						$(".box-img").eq(index).css("opacity","1");
-						$(".botton").css("background-color","#ccc");
-						$(".botton").eq(index).css("background-color","#fff");
-					}else{
-						index++;
-						$(".box-img").css("opacity","0");
-						$(".box-img").eq(index).css("opacity","1");
-						$(".botton").css("background-color","#ccc");
-						$(".botton").eq(index).css("background-color","#fff");
-					}
-				},4000)
-			}
-			$(".box-left").click(function(){
-				clearInterval(f);
-				if(index==0){
-					index=$(".box-img").length-1;
-					$(".box-img").css("opacity","0");
-					$(".box-img").eq(index).css("opacity","1");
-					$(".botton").css("background-color","#ccc");
-					$(".botton").eq(index).css("background-color","#fff");
-					dingshiqi();
-				}
-				else{
-					index--;
-					$(".box-img").css("opacity","0");
-					$(".box-img").eq(index).css("opacity","1");
-					$(".botton").css("background-color","#ccc");
-					$(".botton").eq(index).css("background-color","#fff");
-					dingshiqi();
-				}
-			})
-			$(".box-right").click(function(){
-				clearInterval(f);
-				if(index==$(".box-img").length-1){
-					index=0;
-					$(".box-img").css("opacity","0");
-					$(".box-img").eq(index).css("opacity","1");
-					$(".botton").css("background-color","#ccc");
-					$(".botton").eq(index).css("background-color","#fff");
-					dingshiqi();
-				}
-				else{
-					index++;
-					$(".box-img").css("opacity","0");
-					$(".box-img").eq(index).css("opacity","1");
-					$(".botton").css("background-color","#ccc");
-					$(".botton").eq(index).css("background-color","#fff");
-					dingshiqi();
-				}
-			})
-			
-				$(".botton").click(function(){
-					clearInterval(f);
-					var indexx=$(this).index();
-					index=indexx;
-					$(".box-img").css("opacity","0");
-					$(".box-img").eq(index).css("opacity","1");
-					$(".botton").css("background-color","#ccc");
-					$(".botton").eq(index).css("background-color","#fff");
-					dingshiqi();
-				})
-			
-		})
-	</script>
-	</body>
-</html>
+	<!DOCTYPE html>
 
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Document</title>
+
+<style>
+
+*{
+
+margin: 0;
+
+padding: 0;
+
+list-style: none;
+
+text-decoration: none;
+
+}
+
+#banner{
+
+width: 800px;
+
+height: 400px;
+
+overflow: hidden;
+
+border: 2px solid #999;
+
+position: relative;
+
+}
+
+#banner img{
+
+width: 800px;
+
+height: 400px;
+
+}
+
+#imglist{
+
+width: 4000px;
+
+height: 400px;
+
+}
+
+#imglist li{
+
+float: left;
+
+}
+
+#icolist{
+
+position: absolute;
+
+right: 10px;
+
+bottom: 10px;
+
+}
+
+#icolist li{
+
+float: left;
+
+width: 30px;
+
+height: 30px;
+
+border-radius: 50%;
+
+background: #666;
+
+color: #fff;
+
+margin-left: 5px;
+
+text-align: center;
+
+line-height: 30px;
+
+cursor: pointer;
+
+}
+
+.prev{
+
+background: #666;
+
+height: 40px;
+
+width: 30px;
+
+position: absolute;
+
+left: 5px;
+
+top: 45%;
+
+color: #fff;
+
+line-height: 40px;
+
+text-align: center;
+
+cursor: pointer;
+
+}
+
+.next{
+
+background: #666;
+
+height: 40px;
+
+width: 30px;
+
+position: absolute;
+
+right: 5px;
+
+top: 45%;
+
+color: #fff;
+
+line-height: 40px;
+
+text-align: center;
+
+cursor: pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="banner">
+
+<ul id="imglist">
+
+<li><a href=""><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3gyAOkPxAAN21lweOTc454.jpg    " alt=""></a></li>
+
+<li><a href=""><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3haAB8NoAAQmudz12qg631.jpg    " alt=""></a></li>
+
+<li><a href=""><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3h2ASOxzAANkKL1NIh4216.jpg    " alt=""></a></li>
+
+<li><a href=""><img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3iSAbA-mAAPJIXda3Co376.jpg    " alt=""></a></li>
+
+</ul>
+
+<ul id="icolist">
+
+<li>1</li>
+
+<li>2</li>
+
+<li>3</li>
+
+<li>4</li>
+
+</ul>
+
+<div class="prev">《</div>
+
+<div class="next">》</div>
+
+</div>
+
+<div id="test"></div>
+
+<script>
+
+var esico = document.getElementById('icolist').getElementsByTagName('li');
+
+var eicolist = document.querySelector('#icolist');
+
+var eimglist = document.querySelector('#imglist');
+
+var etest = document.querySelector('#test');
+
+var eprev = document.querySelector('.prev');
+
+var enext = document.querySelector('.next');
+
+var left = 0;
+
+var timer;
+
+esico[2].style.backgroundColor = 'red';
+
+run();
+
+// alert(Math.floor(3190/800));
+
+function run(){
+
+if (left <= -3200) {
+
+left = 0;
+
+}
+
+var m = Math.floor(-left/800) ;
+
+imglist.style.marginLeft = left + 'px';
+
+var n = (left % 800 == 0) ? n = 1200 : n = 6;
+
+left -= 10;
+
+icochange(m);
+
+timer = setTimeout(run,n);
+
+}
+
+function icochange(m){
+
+for (let index = 0; index < esico.length; index++) {
+
+esico[index].style.backgroundColor = '';
+
+}
+
+if (m < esico.length) {
+
+esico[m].style.backgroundColor = 'red';
+
+}
+
+}
+
+function imgchange(n){
+
+let lt = - (n  * 800)
+
+imglist.style.marginLeft = lt + 'px';
+
+left = lt;
+
+}
+
+eprev.onclick = function(){
+
+let prevgo = Math.floor(-left/800)-1;
+
+if (prevgo == -1) {
+
+prevgo =3;
+
+}
+
+imgchange(prevgo);
+
+icochange(prevgo);
+
+}
+
+enext.onclick = function(){
+
+let nextgo = Math.floor(-left/800)+1;
+
+if (nextgo == 4) {
+
+nextgo =0;
+
+}
+
+imgchange(nextgo);
+
+icochange(nextgo);
+
+}
+
+eicolist.onclick = function(){
+
+var tg = event.target;
+
+let ico = tg.innerHTML - 1;
+
+imgchange(ico);
+
+icochange(ico);
+
+}
+
+eimglist.onmouseover = function(){
+
+clearTimeout(timer);
+
+}
+
+eimglist.onmouseout = function(){
+
+run();
+
+}
+
+
+
+</script>
+
+</body>
 
 </html>
