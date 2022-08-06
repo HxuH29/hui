@@ -565,5 +565,238 @@
 				right:100px;
 			}
 		</style>
+		
+		
+		<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .PhotoBox {
+            width: 2000px;
+            height: 600px;
+            position: relative;
+        }
+
+        .img {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            animation: imgAnimation .4s ease-out;
+            display: none;
+        }
+
+        .img:first-child {
+            display: flex;
+        }
+
+        @keyframes imgAnimation {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .img>div {
+            margin-left: 80px;
+            z-index: 999;
+            color: white;
+            height: 200px;
+            margin-bottom: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .img>div>h1 {
+            font-size: 80px;
+            animation: h1Animation .4s ease-out;
+        }
+
+        @keyframes h1Animation {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+
+        .img>div>span {
+            padding-left: 10px;
+            font-size: 17px;
+            animation: h1Animation .7s ease-out;
+        }
+
+        .table {
+            width: 2000px;
+            height: 130px;
+            margin-top: -130px;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .boxbtn {
+            width: 190px;
+            height: 90%;
+            position: relative;
+            border: 4px solid none;
+            box-sizing: border-box;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: -20px;
+            padding-bottom: 0px;
+            color: white;
+            overflow: hidden;
+            user-select: none;
+            margin: 0 5px;
+        }
+
+        .boxbtn>* {
+            transition: all .2s ease-out;
+        }
+
+        .boxbtn>h1 {
+            z-index: 999;
+            transform: translateY(-5px);
+            margin-left: -30px;
+            opacity: 0;
+        }
+
+        .boxbtn>img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transform: scale(1.2);
+        }
+
+        .boxbtnHover {
+            border: 4px solid #005A9E;
+        }
+
+        .boxbtnHover>h1 {
+            margin-left: 10px;
+            opacity: 1;
+        }
+
+        .boxbtnHover>img {
+            margin-left: 0px;
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="PhotoBox">
+            <div class="img" style="background-image: url(http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3gyAOkPxAAN21lweOTc454.jpg);">
+                <div>
+                    <!--这个大图片上显示的文字-->
+                    <h1></h1>
+                    <span></span>
+                </div>
+            </div>
+            <div class="img" style="background-image: url(http://cdn.u1.huluxia.com/g4/M03/6E/FD/rBAAdmLuB0GAUbzUAAEDtWVy3Ek363.jpg);">
+                <div>
+                    <!--这个大图片上显示的文字-->
+                    <h1></h1>
+                    <span></span>
+                </div>
+            </div>
+            <div class="img" style="background-image: url(http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3h2ASOxzAANkKL1NIh4216.jpg);">
+                <div>
+                    <!--这个大图片上显示的文字-->
+                    <h1>赛博朋克2077</h1>
+                    <span>该背景大多描绘在未来，建立于“低端生活与高等科技结合”的基础上...</span>
+                </div>
+            </div>
+            <div class="img" style="background-image: url(/4.png);">
+                <div>
+                    <!--这个大图片上显示的文字-->
+                    <h1>刺客信条-奥德赛</h1>
+                    <span>这款游戏的背景是基于希腊神话创作的...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="table">
+            <div class="boxbtn boxbtnHover">
+                <img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3gyAOkPxAAN21lweOTc454.jpg" alt="">
+                <!--这个小图片上显示的文字-->
+                <h1>图片1</h1>
+            </div>
+            <div class="boxbtn">
+                <img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3haAB8NoAAQmudz12qg631.jpg" alt="">
+                <!--这个小图片上显示的文字-->
+                <h1>图片2</h1>
+            </div>
+            <div class="boxbtn">
+                <img src="http://cdn.u1.huluxia.com/g4/M01/6D/D0/rBAAdmLs3h2ASOxzAANkKL1NIh4216.jpg" alt="">
+                <!--这个小图片上显示的文字-->
+                <h1>赛博朋克</h1>
+            </div>
+            <div class="boxbtn">
+                <img src="/4.png" alt="">
+                <!--这个小图片上显示的文字-->
+                <h1>刺客信条</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        var boxbtn = document.querySelectorAll('.table > div');
+        var img = document.getElementsByClassName("img");
+        for (var i = 0; i < boxbtn.length; i++) {
+            var point = boxbtn[i];
+            point.index = i;
+            point.onmouseover = function () {
+                for (var j = 0; j < boxbtn.length; j++) {
+                    boxbtn[j].className = "boxbtn";
+                    img[j].style.display = "none";
+                }
+                boxbtn[this.index].className = "boxbtn boxbtnHover";
+                img[this.index].style.display = "flex";
+            }
+        }
+    </script>
+</body>
+
+</html>
+<!--源bilibili作者 https://space.bilibili.com/1333864514 -->
 	
 
